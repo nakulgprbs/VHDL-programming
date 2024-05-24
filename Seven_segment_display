@@ -1,0 +1,23 @@
+// seven segment display in program I did only for O and you simillarly one can do upto 9
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity sevenseg01 is
+  port(
+	  S : in std_logic;
+	  segments : out std_logic_vector(6 downto 0)
+  );
+end sevenseg01;
+
+architecture synth of sevenseg01 is
+begin
+  process(s)
+  begin
+  if s ='0'then segments <= "1111110";
+  else segments <= "0110000";
+  end if;
+  end process;
+  end synth;
+
+
